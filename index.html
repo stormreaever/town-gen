@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="script.js"></script>
+
+		<style>
+			body{
+				max-width: 720px;
+				margin: 40px auto;
+				font-family: tahoma;
+			}
+			button {
+				padding: 5px 20px;
+				font-family: tahoma;
+			}
+			.generate, .save {
+				width: 50%;
+				float: left;
+
+			}
+			li::first-letter {
+				text-transform: uppercase;
+			}
+		</style>
+
+	</head>
+	<body>
+
+	<h1>Title</h1>
+
+	<p>click on a gen to save it</p>
+
+	<div class="generate">
+		<p><button type="button" id="btn_gen">Generate</button></p>
+	
+		<ul id="result"></ul>
+	</div>
+
+	<div class="save">
+		<h2>Saved</h2>
+	
+		<ul id="saved"></ul>
+	</div>
+
+	</body>
+</html>
