@@ -6,10 +6,19 @@ $(document).ready(function(){
 
 		$.getJSON( "syllables.json", function( data ) {
 
+			var last_syl = "";
+
+			// function for getting a random item form an array
 			function get_syllable(syls) {
-				var rand_syl = Math.floor(Math.random()*syls.length);
-				// gen random number from the array
-				return syls[rand_syl];
+				var new_rand_syl;
+				do {
+					var rand_syl = Math.floor(Math.random()*syls.length);
+					new_rand_syl = syls[rand_syl];
+					// gen syl from the array
+				} while (new_rand_syl == last_syl) // do not duplicate syllables
+				last_syl = new_rand_syl;
+				
+				return new_rand_syl;
 				// return the syllable
 			};
 
@@ -27,6 +36,7 @@ $(document).ready(function(){
 
 			// get number of syllables in town: 2-4
 			var num_syls=Math.floor(Math.random()*3 + 1);
+			var num_syls=3;
 			// generate each of the next random syllables
 			for(var i = 0;i < num_syls; i++) {
 				//next syllables: get random number from anyfix list
